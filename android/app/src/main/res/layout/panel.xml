@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layoutButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/messageToSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sendButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clearButton"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/clearButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/sendButton"
+        android:onClick="clearButtonClicked"
+        android:src="@drawable/ic_clear"
+        android:text="clear" />
+
+    <ImageView
+        android:id="@+id/sendButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:onClick="sendButtonClicked"
+        android:src="@drawable/ic_send"
+        android:text="send" />
+</RelativeLayout>

@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@android:color/black</item>
+    </style>
+
 </resources>

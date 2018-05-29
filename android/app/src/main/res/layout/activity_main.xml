@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,281 +13,9 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
+    <include layout="@layout/letters" />
 
-
-    <LinearLayout
-        android:id="@+id/layoutLetters"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/layoutButton"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical">
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="a" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="b" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="c" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_d"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="d" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_e"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="e" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_f"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="f" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_g"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="g" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_h"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="h" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical">
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_i"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="25dp"
-                android:layout_weight="2"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="i" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_j"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="j" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_k"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="k" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_l"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="l" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_m"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="m" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_n"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="n" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_o"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="o" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_p"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="p" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_q"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_weight="2"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="q" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical">
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_r"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="r" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_s"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="s" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_t"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="t" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_u"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="u" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_v"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="v" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_w"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="w" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_x"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="blue"
-                app:letter="x" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_y"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="green"
-                app:letter="y" />
-
-            <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
-                android:id="@+id/letter_z"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:onClick="letterClicked"
-                app:led_color="red"
-                app:letter="z" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/layoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -302,18 +31,41 @@
             android:layout_alignBottom="@+id/sendButton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/sendButton"
+            android:layout_toLeftOf="@+id/clearButton"
             android:gravity="center_vertical"
             android:textColor="@android:color/black"
             android:textSize="30sp" />
 
-        <Button
+        <ImageView
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/clearButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/sendButton"
+            android:onClick="clearButtonClicked"
+            android:src="@drawable/ic_clear"
+            android:text="clear" />
+
+        <ImageView
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:onClick="sendButtonClicked"
+            android:src="@drawable/ic_send"
             android:text="send" />
     </RelativeLayout>
+
+    <ImageView
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_margin="5dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_bluetooth_on" />
 
 </RelativeLayout>

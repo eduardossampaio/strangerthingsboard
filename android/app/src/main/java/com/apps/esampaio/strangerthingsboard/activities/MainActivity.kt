@@ -8,6 +8,7 @@ import android.view.View
 import com.apps.esampaio.strangerthingsboard.R
 import com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.letters.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
@@ -21,43 +22,16 @@ class MainActivity : AppCompatActivity() {
         messageToSend.setTypeface(Typeface.createFromAsset(getAssets(), "font/benguiat_bold.ttf"))
 
         letterViews = mapOf<String, WallLetter>(
-                "a" to letter_a,
-                "b" to letter_b,
-                "c" to letter_c,
-                "d" to letter_d,
-                "e" to letter_e,
-                "f" to letter_f,
-                "g" to letter_g,
-                "h" to letter_h,
-                "i" to letter_i,
-                "j" to letter_j,
-                "k" to letter_k,
-                "l" to letter_l,
-                "m" to letter_m,
-                "n" to letter_n,
-                "o" to letter_o,
-                "p" to letter_p,
-                "q" to letter_q,
-                "r" to letter_r,
-                "s" to letter_s,
-                "t" to letter_t,
-                "u" to letter_u,
-                "v" to letter_v,
-                "w" to letter_w,
-                "x" to letter_x,
-                "y" to letter_y,
-                "z" to letter_z
-        );
+                "a" to letter_a, "b" to letter_b, "c" to letter_c, "d" to letter_d,
+                "e" to letter_e, "f" to letter_f, "g" to letter_g, "h" to letter_h,
+                "i" to letter_i, "j" to letter_j, "k" to letter_k, "l" to letter_l,
+                "m" to letter_m, "n" to letter_n, "o" to letter_o, "p" to letter_p,
+                "q" to letter_q, "r" to letter_r, "s" to letter_s, "t" to letter_t,
+                "u" to letter_u, "v" to letter_v, "w" to letter_w, "x" to letter_x,
+                "y" to letter_y, "z" to letter_z);
     }
 
     fun letterClicked(view: View) {
-//        if ( view is TextView) {
-//            val animObj = AlphaAnimation(0f, 1f);
-//            animObj.duration = 200
-//            messageToSend.startAnimation(animObj)
-//            messageToSend.append(view.text)
-//        }
-
         if (view is WallLetter) {
             messageToSend.append(view.getLetter())
         }
@@ -66,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
     fun sendButtonClicked(view: View) {
         send(messageToSend.text.toString())
+        messageToSend.text = ""
+    }
+
+    fun clearButtonClicked(view: View){
         messageToSend.text = ""
     }
 

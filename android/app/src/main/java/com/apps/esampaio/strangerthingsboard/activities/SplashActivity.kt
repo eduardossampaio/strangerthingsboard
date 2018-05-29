@@ -5,21 +5,28 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.apps.esampaio.strangerthingsboard.R
-import com.medialablk.easygifview.EasyGifView
 import kotlinx.android.synthetic.main.activity_splash.*
-import org.jetbrains.anko.startActivity
+import com.whygraphics.gifview.gif.GIFView
+import android.widget.Toast
 
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity(), GIFView.OnSettingGifListener {
+    override fun onSuccess(p0: GIFView?, p1: java.lang.Exception?) {
+        Handler().postDelayed({
+            splash_image.stop()
+            goToMainActivity()
+        }, splash_image.gifDuration.toLong() * 1000);
+    }
+
+    override fun onFailure(p0: GIFView?, p1: java.lang.Exception?) {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        splash_image.gifFromResource = R.drawable.splash //Your own GIF file from Resources
-        Handler().postDelayed({
-            goToMainActivity()
-        },splash_image.gifDuration);
-
+        splash_image.setGifResource("asset:splash")
+        splash_image.setOnSettingGifListener(this)
     }
 
     private fun goToMainActivity() {
