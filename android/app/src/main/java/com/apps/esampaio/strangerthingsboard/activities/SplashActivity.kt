@@ -25,8 +25,10 @@ class SplashActivity : AppCompatActivity(), GIFView.OnSettingGifListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        splash_image.setGifResource("asset:splash")
-        splash_image.setOnSettingGifListener(this)
+        Handler().postDelayed({
+            splash_image.setGifResource("asset:splash")
+            splash_image.setOnSettingGifListener(this)
+        },1000)
     }
 
     private fun goToMainActivity() {
