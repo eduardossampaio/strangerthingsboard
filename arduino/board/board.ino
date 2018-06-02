@@ -5,6 +5,7 @@
 #define BLACK_PIN 11
 #define BROWN_PIN 12
 
+#define DELAY_TIME 700
 
 void reset_pins()
 {
@@ -120,10 +121,10 @@ void print_char(char ch){
 }
 void print_word(String word){
   word.toLowerCase();
-  int delay_time = 500;
+  
   for(int i =0; i< word.length(); i++){  
     print_char(word[i]);      
-    delay(delay_time);
+    delay(DELAY_TIME);
   }
   reset_pins();
 }
