@@ -62,6 +62,7 @@
     <ImageView
         android:background="?attr/selectableItemBackgroundBorderless"
         android:layout_margin="5dp"
+        android:id="@+id/bluetooth_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"

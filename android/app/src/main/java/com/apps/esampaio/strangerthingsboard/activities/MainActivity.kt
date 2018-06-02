@@ -1,11 +1,13 @@
 package com.apps.esampaio.strangerthingsboard.activities
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
-import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import com.apps.esampaio.strangerthingsboard.Constants
 import com.apps.esampaio.strangerthingsboard.R
 import com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
 import com.apps.esampaio.strangerthingsboard.service.BluetoothService
@@ -17,7 +19,7 @@ import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
     var letterViews = emptyMap<String, WallLetter>()
-    var bluetoothService:BluetoothService?=null
+    var bluetoothService: BluetoothService = BluetoothService();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,27 +35,54 @@ class MainActivity : AppCompatActivity() {
                 "q" to letter_q, "r" to letter_r, "s" to letter_s, "t" to letter_t,
                 "u" to letter_u, "v" to letter_v, "w" to letter_w, "x" to letter_x,
                 "y" to letter_y, "z" to letter_z);
+        bluetoothIconOff()
     }
 
     override fun onResume() {
         super.onResume()
-        connectToUpsideDown()
+        checkAndConnect()
     }
 
-    fun connectToUpsideDown(){
-        if(bluetoothService != null) {
-            val bluetoothService = bluetoothService!!
-            if( ! bluetoothService.isConnected()) {
-                val paredDevices = bluetoothService.getParedDevices()
-                for (device in paredDevices) {
-                    if (device.name.equals("HC-05")) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == BluetoothService.ENABLE_BLLUETOOTH_RESULT_CODE && resultCode == Activity.RESULT_OK){
+            connectToUpsideDown()
+        }
+    }
+
+    private fun checkAndConnect(){
+        doAsync {
+            if (!bluetoothService.bluetoothIsEnabled()) {
+                bluetoothService.turnOnBluetooth()
+            } else if (!bluetoothService.isConnected()) {
+                connectToUpsideDown()
+            }else{
+                bluetoothIconOn()
+            }
+        }
+    }
+
+    fun connectToUpsideDown() {
+        if (!bluetoothService.isConnected()) {
+            val paredDevices = bluetoothService.getParedDevices()
+            for (device in paredDevices) {
+                if (device.name.equals(Constants.BLUETOOTH_MODULE_NAME)) {
+                    try {
                         bluetoothService.connect(device)
-                        Toast.makeText(this, "pared to upside down", Toast.LENGTH_SHORT).show()
+                        runOnUiThread {
+                            Toast.makeText(this, "Conectado ao mundo invertido", Toast.LENGTH_SHORT).show()
+                            bluetoothIconOn()
+                        }
+                    }catch (e:Exception){
+                        runOnUiThread {
+                            Toast.makeText(this, "O portal pro mundo invertido está fechado", Toast.LENGTH_SHORT).show()
+                            bluetoothIconOff()
+                        }
                     }
                 }
             }
         }
     }
+
     fun letterClicked(view: View) {
         if (view is WallLetter) {
             messageToSend.append(view.getLetter())
@@ -65,17 +94,17 @@ class MainActivity : AppCompatActivity() {
         messageToSend.text = ""
     }
 
-    fun clearButtonClicked(view: View){
+    fun clearButtonClicked(view: View) {
         messageToSend.text = ""
     }
 
     private fun send(message: String) {
-        val delayTime = 1000L
+        val delayTime = Constants.DELAY_TIME
+
         doAsync {
             for (letter in message.toCharArray()) {
                 uiThread {
                     letterViews[letter.toString()]?.blinkLed(delayTime)
-                    val bluetoothService = bluetoothService!!
                     if (bluetoothService.isConnected()) {
                         val messageToSend = ByteArray(1);
                         messageToSend[0] = letter.toByte();
@@ -84,6 +113,18 @@ class MainActivity : AppCompatActivity() {
                 }
                 Thread.sleep(delayTime)
             }
+        }
+    }
+
+    private fun bluetoothIconOn(){
+        runOnUiThread {
+            bluetooth_icon.setImageResource(R.drawable.ic_bluetooth_on)
+        }
+    }
+
+    private fun bluetoothIconOff(){
+        runOnUiThread {
+            bluetooth_icon.setImageResource(R.drawable.ic_bluetooth_off)
         }
     }
 }

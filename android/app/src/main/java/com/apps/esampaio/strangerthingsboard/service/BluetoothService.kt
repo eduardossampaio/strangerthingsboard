@@ -1,10 +1,12 @@
 package com.apps.esampaio.strangerthingsboard.service
 
+import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
 import android.content.Context
 import android.content.Intent
+import com.apps.esampaio.strangerthingsboard.App
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
@@ -24,19 +26,28 @@ class BluetoothService {
 
     private var connected = false;
 
-
+    companion object {
+        val ENABLE_BLLUETOOTH_RESULT_CODE = 1234;
+    }
+    constructor(){
+        this.context = App.instance!!;
+    }
     constructor(context: Context){
         this.context = context
         this.btAdapter = BluetoothAdapter.getDefaultAdapter()
     }
 
     fun bluetoothIsEnabled():Boolean{
-        return btAdapter != null
+        return btAdapter != null && btAdapter!!.isEnabled;
     }
 
     fun turnOnBluetooth(){
-        val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)//        startActivityForResult(enableBtIntent, ENABLE_BLUETOOTH);
-        context.startActivity(enableBtIntent)
+        val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+        if(context is Activity){
+            context.startActivityForResult(enableBtIntent,ENABLE_BLLUETOOTH_RESULT_CODE);
+        }else {
+            context.startActivity(enableBtIntent)
+        }
 
     }
 
@@ -50,20 +61,24 @@ class BluetoothService {
     }
 
 
-    @Throws(Exception::class)
+
     fun connect(bluetoothDevice: BluetoothDevice) {
-
         val uuid = bluetoothDevice.getUuids()[0].getUuid()
-
         socket = bluetoothDevice.createRfcommSocketToServiceRecord(uuid)
         if( socket != null) {
             val socket = socket!!
-            socket.connect()
+            try {
+                socket.connect()
 
-            inputStream = socket.getInputStream()
-            outputStream = socket.getOutputStream()
+                inputStream = socket.getInputStream()
+                outputStream = socket.getOutputStream()
 
-            connected = true
+                connected = true
+            }catch (e:Exception){
+                connected = false
+                throw e
+            }
+
         }
     }
 
@@ -101,5 +116,9 @@ class BluetoothService {
             return null
         }
 
+    }
+
+    fun enableBluetooth() {
+        btAdapter?.enable()
     }
 }
