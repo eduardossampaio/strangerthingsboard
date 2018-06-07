@@ -15,11 +15,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.letters.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-
+import android.media.MediaPlayer
 
 class MainActivity : AppCompatActivity() {
     var letterViews = emptyMap<String, WallLetter>()
     var bluetoothService: BluetoothService = BluetoothService();
+    var playingMusic = false;
+    private var mediaPlayer =  MediaPlayer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 "u" to letter_u, "v" to letter_v, "w" to letter_w, "x" to letter_x,
                 "y" to letter_y, "z" to letter_z);
         bluetoothIconOff()
+        mediaPlayer = MediaPlayer.create(this,R.raw.opening_music)
     }
 
     override fun onResume() {
@@ -89,7 +92,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun letterClicked(view: View) {
-        if (view is WallLetter) {
+        if (view is WallLetter && bluetoothService.isConnected()) {
             messageToSend.append(view.getLetter())
         }
     }
@@ -103,6 +106,18 @@ class MainActivity : AppCompatActivity() {
         messageToSend.text = ""
     }
 
+    fun toggleAudio(view: View){
+        playingMusic = !playingMusic
+
+        if(playingMusic){
+            audio_icon.setImageResource(R.drawable.ic_audio_on)
+            mediaPlayer.start()
+        }else{
+            audio_icon.setImageResource(R.drawable.ic_audio_off)
+            mediaPlayer.pause()
+            mediaPlayer.seekTo(0)
+        }
+    }
     private fun send(message: String) {
         val delayTime = Constants.DELAY_TIME
 

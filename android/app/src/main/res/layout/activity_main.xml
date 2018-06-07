@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
+
     <include layout="@layout/letters" />
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -67,6 +68,18 @@
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_bluetooth_on" />
+        android:src="@drawable/ic_bluetooth_off" />
+
+
+    <ImageView
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_margin="5dp"
+        android:onClick="toggleAudio"
+        android:id="@+id/audio_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_audio_off" />
 
 </RelativeLayout>

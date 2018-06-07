@@ -61,7 +61,6 @@ class BluetoothService {
     }
 
 
-
     fun connect(bluetoothDevice: BluetoothDevice) {
         val uuid = bluetoothDevice.getUuids()[0].getUuid()
         socket = bluetoothDevice.createRfcommSocketToServiceRecord(uuid)

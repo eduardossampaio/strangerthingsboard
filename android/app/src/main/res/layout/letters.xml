@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="blue"
+            app:led_color="red"
             app:letter="a" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="green"
             app:letter="b" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="green"
+            app:led_color="blue"
             app:letter="c" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="blue"
+            app:led_color="green"
             app:letter="e" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="green"
+            app:led_color="blue"
             app:letter="f" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="blue"
+            app:led_color="red"
             app:letter="g" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="green"
             app:letter="h" />
     </LinearLayout>
 
@@ -101,7 +101,7 @@
             android:layout_marginRight="25dp"
             android:layout_weight="2"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="blue"
             app:letter="i" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="blue"
+            app:led_color="red"
             app:letter="j" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="green"
+            app:led_color="red"
             app:letter="m" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="green"
             app:letter="n" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -164,7 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="green"
             app:letter="p" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -220,7 +220,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="blue"
             app:letter="u" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -229,7 +229,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="blue"
+            app:led_color="red"
             app:letter="v" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -247,7 +247,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="blue"
+            app:led_color="red"
             app:letter="x" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -256,7 +256,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="green"
+            app:led_color="blue"
             app:letter="y" />
 
         <com.apps.esampaio.strangerthingsboard.activities.view.custom.WallLetter
@@ -266,7 +266,7 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:onClick="letterClicked"
-            app:led_color="red"
+            app:led_color="green"
             app:letter="z" />
 
     </LinearLayout>
