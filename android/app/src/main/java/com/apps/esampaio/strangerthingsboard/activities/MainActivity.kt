@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun send(message: String) {
         val delayTime = Constants.DELAY_TIME
-
+        val delayTimeDelay = 200;
         doAsync {
             for (letter in message.toCharArray()) {
                 uiThread {
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                         bluetoothService.send(messageToSend)
                     }
                 }
-                Thread.sleep(delayTime)
+                Thread.sleep(delayTime+delayTimeDelay)
             }
         }
     }
