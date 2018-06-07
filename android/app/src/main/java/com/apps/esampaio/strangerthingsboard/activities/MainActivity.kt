@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         checkAndConnect()
     }
 
+    override fun onPause() {
+        super.onPause()
+        bluetoothService.disconnect()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode == BluetoothService.ENABLE_BLLUETOOTH_RESULT_CODE && resultCode == Activity.RESULT_OK){
             connectToUpsideDown()

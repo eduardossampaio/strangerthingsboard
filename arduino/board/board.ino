@@ -1,8 +1,8 @@
-#define BLUE_PIN 7
-#define WHITE_PIN 8
-#define YELLOW_PIN 9
-#define RED_PIN 10
-#define BLACK_PIN 11
+#define BLUE_PIN 2
+#define WHITE_PIN 4
+#define YELLOW_PIN 6
+#define RED_PIN 8
+#define BLACK_PIN 10
 #define BROWN_PIN 12
 
 #define DELAY_TIME 700
@@ -145,4 +145,5 @@ void loop()
     }
     print_word(word);
   }  
+  
 }
