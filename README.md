@@ -30,20 +30,17 @@ To assemble the Arduino frame follow this steps:
 3. Glue the printed image in the photo frame and drill in top of each letter, using a dremel or other tool you prefer. Next, Put the leds in the holes you made in previous step
 
 
-<img src="media/images/step_1.jpg" alt="drawing" width="200px"/>
-<img src="media/images/step_2.jpg" alt="drawing" width="200px"/>
+<img src="media/images/step_1.jpg" alt="drawing" width="200px"/> <img src="media/images/step_2.jpg" alt="drawing" width="200px"/>
 
-4. Connect the leds in pair, connect the anode of one led to the cathod of the other led
-
-
-<img src="media/images/step_3.jpg" alt="drawing" width="200px"/>
-<img src="media/images/step_4.jpg" alt="drawing" width="200px"/>
-
-5. whire the leds as the folowing schematic. To make the wire more easy, I use different wire colors, and using the same color name in the arduino code.
+4. wire the leds as the folowing schematic. To make the wire more easy, I use different wire colors, and using the same color name in the arduino code.
 
 <img src="media/images/charlieplexing.jpg" alt="drawing" />
 
-6. Plug the wires in Arduino port of your choise, or use the same defined in code. Don't use the pins 0 and 1, these are needed to connect to HC-05
+
+<img src="media/images/step_3.jpg" alt="drawing" width="200px"/> <img src="media/images/step_4.jpg" alt="drawing" width="200px"/>
+
+
+5. Plug the wires in Arduino port of your choise, or use the same defined in code. Don't use the pins 0 and 1, these are needed to connect to HC-05
 
 ```C
 #define BLUE_PIN 2
@@ -54,12 +51,12 @@ To assemble the Arduino frame follow this steps:
 #define BROWN_PIN 12
 ```
 
-7. Wire the hc-05 module to Arduino nano
+6. Wire the hc-05 module to Arduino nano
 
 
 <img src="media/images/hc-05-arduino.png" width="200px"/>
 
-8. (Optional) Change the Bluetooth name using AT commands (read more [here](http://www.instructables.com/id/Modify-The-HC-05-Bluetooth-Module-Defaults-Using-A/))
+7. (Optional) Change the Bluetooth name using AT commands (read more [here](http://www.instructables.com/id/Modify-The-HC-05-Bluetooth-Module-Defaults-Using-A/))
 
 ### Android app
 
