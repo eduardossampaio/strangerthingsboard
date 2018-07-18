@@ -1,7 +1,6 @@
 # Stranger things Board
 
-<img src="media/images/top.jpg" alt="drawing" width="200px"/> <img src="media/images/step_2.jpg" alt="drawing" width="200px"/>
-
+<img src="media/images/top.jpg" alt="drawing" width="200px"/>
 ## About
 
 That stranger things is a great series, no one has doubts. But for me it have a special meaning, because me and my girlfriend watched it together and nothing more cool that make a thematic gift to give to her at Valentine's Day
